@@ -29,6 +29,8 @@ import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.co
 
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { RatingComponent } from './shared/rating/rating.component';
 
 
 
@@ -49,7 +51,9 @@ import { RadioComponent } from './shared/radio/radio.component';
     InputComponent,
     RadioComponent,
     OrderItemsComponent,
-    DeliveryCostsComponent
+    DeliveryCostsComponent,
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
