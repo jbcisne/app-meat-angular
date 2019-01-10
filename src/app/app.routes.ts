@@ -1,4 +1,4 @@
-    {path:'about', loadChildren: './about/about.module#AboutModule'},
+
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { RestaurantsComponent } from "./restaurants/restaurants.component";
