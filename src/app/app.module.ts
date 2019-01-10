@@ -22,6 +22,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -47,7 +48,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     //preloadingStrategy carregas os modulos lazy loading em background apos o carregamento do modulo root
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}, 
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
