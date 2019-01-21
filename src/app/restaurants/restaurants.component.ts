@@ -5,6 +5,12 @@ import { RestaurantsService } from './restaurants.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/from';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'mt-restaurants',
@@ -42,8 +48,13 @@ export class RestaurantsComponent implements OnInit {
 
     /* controle de digitação na barra de pesquisa */
     this.searchControl.valueChanges
+      .debounceTime(500)
+      .distinctUntilChanged()
       .switchMap(searchTerm => 
-        this.restaurantsService.restaurants(searchTerm)
+        this.restaurantsService
+            .restaurants(searchTerm)
+            .catch(error => Observable.from([])
+        )
       )
       .subscribe((restaurants: Array<Restaurant>) => this.restaurants = restaurants)
 
