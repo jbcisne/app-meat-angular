@@ -7,9 +7,11 @@ import { MenuComponent } from "./restaurant-detail/menu/menu.component";
 import { ReviewsComponent } from "./restaurant-detail/reviews/reviews.component";
 import { OrderSummaryComponent } from "./order-summary/order-summary.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { LoginComponent } from "./security/login/login.component";
 
 export const ROUTES: Routes = [
     {path:'', component: HomeComponent},
+    {path:'login', component: LoginComponent},
     //só carrega o modulo about quando a rota for acionada (lazy loading)
     {path:'about', loadChildren: './about/about.module#AboutModule'},
     {path:'order', loadChildren: './order/order.module#OrderModule'},

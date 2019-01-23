@@ -11,6 +11,7 @@ import { OrderService } from "../order/order.service";
 import { RestaurantsService } from "../restaurants/restaurants.service";
 import { SnackbarComponent } from "./messages/snackbar/snackbar.component";
 import { NotificationService } from "./messages/notification.service";
+import { LoginService } from "app/security/login/login.service";
 
 @NgModule({
     declarations: [
@@ -38,7 +39,13 @@ export class SharedModule{
   static forRoot(): ModuleWithProviders {
       return {
           ngModule: SharedModule,
-          providers:[ShoppingCartService, OrderService, RestaurantsService, NotificationService]
-      }
+          providers: [
+            ShoppingCartService,
+            OrderService,
+            RestaurantsService,
+            NotificationService,
+            LoginService
+        ]
+    }
   }
 }
