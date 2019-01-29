@@ -18,6 +18,10 @@
       "../node_modules/@types"
     ]
   },
+  //adicionado para preservar os espaços em branco nos templates em build de produção
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true,
+  },
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

@@ -8,5 +8,5 @@ import { AppModule } from './app/';
 if (environment.production) {
   enableProdMode();
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
+//"preserveWhitespaces: true" preserva os espaços em branco nos templates
+platformBrowserDynamic().bootstrapModule(AppModule/*, { preserveWhitespaces: true } */);
