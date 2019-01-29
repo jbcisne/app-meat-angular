@@ -22,8 +22,8 @@ export const ROUTES: Routes = [
         ]},
     {path:'restaurants', component: RestaurantsComponent},
     {path:'order', loadChildren: './order/order.module#OrderModule',
-     canLoad: [LoggedInGuard],
-     canActivate: [LoggedInGuard]
+      canLoad: [LoggedInGuard],
+      canActivate: [LoggedInGuard]
     },
     {path:'order-summary', component: OrderSummaryComponent},
     //só carrega o modulo about quando a rota for acionada (lazy loading)
