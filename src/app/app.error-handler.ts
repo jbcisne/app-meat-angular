@@ -14,9 +14,7 @@ export class ApplicationErrorHandler extends ErrorHandler {
     super()
   }
 
-  handlerError(errorResponse: HttpErrorResponse | any) {
-    this.ns.notify('adfasdfasdfasdf');
-    
+  handlerError(errorResponse: HttpErrorResponse | any) {    
     if (errorResponse instanceof HttpErrorResponse) {
       let message = errorResponse.error.message
       this.zone.run(() => {
